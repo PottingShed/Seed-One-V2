@@ -84,5 +84,6 @@ Checked at 320x568, 375x667, 390x844, 430x932, 600x960, 768x1024, 820x1180, 1024
 ## Media
 - Hero: Banner 6 (Premiere edit, 29 Sep 2026; the volvox and green-cell shots darkened for legibility), 1920x1080 with audio removed, plus a 1280 version for phones. The finale reuses it very faintly. White hero type clears WCAG contrast on every clip with the standard overlay (headline at least 3.5:1, small text at least 5:1).
 - Specimen band: Adobe Stock 812350176 (dividing cells).
+- What We Do: lab film band (Adobe Stock 515690281), full-bleed lab film (Artlist 6319241), the scientist beside "What sets us apart" and the three focus-area photographs. Sources in `assets/img/credits.json`. Two of the stills are Getty Images on Unsplash+, which need an Unsplash+ licence for commercial use.
 - Research-bench still: Unsplash (National Cancer Institute), free commercial licence. Credit in `assets/img/credits.json`.
 - Portfolio logos were supplied by the client as raster screenshots. Request vector logos for production. The Elusys logo is the SVG from elusys.com with its white lettering and swirl set in charcoal for light backgrounds (assets/logos/logo-elusys.svg).
