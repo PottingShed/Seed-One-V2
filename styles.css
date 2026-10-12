@@ -699,15 +699,17 @@ p{text-wrap:pretty}
 
 /* What we do: the homepage's full-bleed film band and image section, set to the subpage type scale */
 .sub .band-t h2,.sub .full h2{font-size:var(--h2);max-width:12em}
-.wwd-band{height:clamp(520px,50vw,780px);margin-top:clamp(90px,9vw,140px)}
+.film-band{height:clamp(520px,50vw,780px);margin-top:clamp(90px,9vw,140px)}
 .full-media video{width:100%;height:100%;object-fit:cover}
-.wwd-full{height:auto;min-height:clamp(600px,60vw,920px);margin-top:clamp(90px,9vw,140px);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(60px,6.2vw,96px) 0 clamp(24px,3.3vw,48px)}
-.wwd-full .full-sh{background:linear-gradient(90deg,rgba(10,10,12,.66),rgba(10,10,12,.22) 62%,rgba(10,10,12,.08)),linear-gradient(0deg,rgba(10,10,12,.5),transparent 40%)}
-.wwd-full .full-t,.wwd-full .full-bar{position:relative;z-index:1;left:auto;right:auto;top:auto;bottom:auto}
-.wwd-full .full-t{margin:0 var(--edge)}
-.wwd-full .full-bar{margin:48px var(--gut) 0}
-.wwd-full .lab{color:rgba(255,255,255,.75);margin-bottom:22px}
-.wwd-full .speed-cols p{color:rgba(255,255,255,.86)}
+.film-full{height:auto;min-height:clamp(600px,60vw,920px);margin-top:clamp(90px,9vw,140px);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(60px,6.2vw,96px) 0 clamp(24px,3.3vw,48px)}
+.film-full .full-sh{background:linear-gradient(90deg,rgba(10,10,12,.66),rgba(10,10,12,.22) 62%,rgba(10,10,12,.08)),linear-gradient(0deg,rgba(10,10,12,.5),transparent 40%)}
+.film-full .full-t,.film-full .full-bar{position:relative;z-index:1;left:auto;right:auto;top:auto;bottom:auto}
+.film-full .full-t{margin:0 var(--edge)}
+.film-full .full-bar{margin:48px var(--gut) 0}
+.film-full .lab{color:rgba(255,255,255,.75);margin-bottom:22px}
+.film-full .speed-cols p,.full-p{color:rgba(255,255,255,.86)}
+.full-p{font-size:clamp(17px,1.3vw,19px);line-height:1.55;max-width:34em;margin-top:clamp(24px,2.6vw,36px)}
+.pf+.film-full{margin-top:0}
 .areas3.photo{gap:clamp(16px,1.8vw,26px)}
 .areas3.photo .area:nth-child(2){transition-delay:.08s}.areas3.photo .area:nth-child(3){transition-delay:.16s}
 @media (max-width:1023px){.areas3.photo{grid-template-columns:repeat(3,1fr)}.areas3.photo .area:last-child{grid-column:auto}}
