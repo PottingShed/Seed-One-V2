@@ -41,7 +41,7 @@ A nav · B hero film · C focus marquee · D mission · E specimen band (with po
 ## Motion
 - Nav: always visible (client request, Oct 2026). It tightens by 20px once you scroll and gains a hairline past the film.
 - Every entrance fires once. Only transform, opacity and clip-path animate, on one ease curve `cubic-bezier(.16,1,.3,1)`.
-- Hero: the film settles from 1.08x and the headline words rise, then the button, paragraph and finally the "Med-tech venture builders since 1997" label (1.75s). On scroll the film drifts and the copy lifts and fades.
+- Hero: the film settles from 1.08x and the headline words rise, then the button, paragraph and finally the "Med-tech venture builders for over 2 decades" label (1.75s). On scroll the film drifts and the copy lifts and fades.
 - Word masks are kept for the two editorial headlines. Section headings use a quieter fade, so motion falls away after the hero.
 - Method: on screens 1024 wide and up the section pins while the five stages light in turn and stay lit, with a progress rail. While pinned it is sized to the screen height, and it only pins when the whole section fits, so it works on 1280x720 to 2560x1440 laptops and monitors. Otherwise it is a normal grid. Smaller screens show a normal grid (5 across, 2 + 3 on tablets, stacked on phones).
 - VI dot glyphs assemble dot by dot as they arrive.
@@ -79,7 +79,7 @@ Checked at 320x568, 375x667, 390x844, 430x932, 600x960, 768x1024, 820x1180, 1024
 
 ## To confirm with the client
 - "We forge them." uses a full stop. Jeff asked for three dots in round 1 (20 Sep 2026).
-- The figures (12+, 10+, 1997, $100Ms), the case study facts and the portfolio summaries, which are condensed from the client copy.
+- The figures (12+, 10+, 20+, $1B+), the case study facts and the portfolio summaries, which are condensed from the client copy.
 - The research-bench band still says "Now reviewing technologies".
 - The Scott Wolf photo (taken from the supplied file 1699391219879.jpeg).
 - Copy edits to the client text: "Seed-One" set as "Seed One", typos fixed, "track record" heading reworded, "Zeltiq recently filed for an IPO" updated to "completed its IPO in 2011", portfolio profiles in the third person, and "Managing Partner" set as "Managing Director" to match the Team page.

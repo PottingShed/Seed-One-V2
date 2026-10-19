@@ -615,8 +615,8 @@ p{text-wrap:pretty}
 .mate:hover .mate-x{background:var(--ink);color:#fff;transform:rotate(90deg)}
 .mate-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
 .mate-meta .n{color:var(--mid)}
-.mate .role,.bio .role{color:rgba(35,31,32,.72);display:flex;align-items:center;gap:10px}
-.mate .role::before,.bio .role::before{content:"";width:12px;height:12px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--t1),var(--c3))}
+.mate .role,.drawer.bio .role{color:rgba(35,31,32,.72);display:flex;align-items:center;gap:10px}
+.mate .role::before,.drawer.bio .role::before{content:"";width:12px;height:12px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--t1),var(--c3))}
 .mate h3{font-size:var(--h3);letter-spacing:-.04em;line-height:1.05;margin-top:14px}
 .mate-b{text-align:left;letter-spacing:inherit}
 .mate-b::after{content:"";position:absolute;inset:0;z-index:3;border-radius:var(--r-lg)}
@@ -626,13 +626,13 @@ p{text-wrap:pretty}
 .js .mate-bio{display:none}
 @media (min-width:1024px){.crew .mate:nth-child(even){margin-top:clamp(48px,5.5vw,88px)}}
 
-.bio{width:min(700px,100vw)}
-.bio .drawer-in{transition:opacity .26s ease}
-.bio .drawer-in.swap{opacity:0}
+.drawer.bio{width:min(700px,100vw)}
+.drawer.bio .drawer-in{transition:opacity .26s ease}
+.drawer.bio .drawer-in.swap{opacity:0}
 .bio-head{display:grid;grid-template-columns:clamp(120px,22vw,168px) 1fr;gap:clamp(20px,2.6vw,32px);align-items:end;margin-top:clamp(36px,4.4vw,56px)}
 .bio-ph{aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--base)}
 .bio-ph img{width:100%;height:100%;object-fit:cover}
-.bio h2{font-size:clamp(30px,3.4vw,44px);letter-spacing:-.045em;line-height:1.02;margin:0 0 14px;max-width:none}
+.drawer.bio h2{font-size:clamp(30px,3.4vw,44px);letter-spacing:-.045em;line-height:1.02;margin:0 0 14px;max-width:none}
 .bio-body{margin-top:clamp(28px,3.2vw,40px)}
 .bio-body p{font-size:16px;line-height:1.6;color:var(--body);margin-bottom:1em}
 .bio-body p:first-child{font-size:clamp(19px,1.6vw,22px);line-height:1.42;letter-spacing:-.012em;color:var(--ink)}
