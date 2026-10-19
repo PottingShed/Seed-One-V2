@@ -20,6 +20,9 @@ form, dot glyphs and line drawings from `index.html`, so edit those on the homep
 
     python3 tools/build_pages.py
 
+## Duotone photography
+Subpage headers and the focus-area cards use duotone photographs in the page's colour (deep tone to white or a pale tint). Sources live in `tools/hero-src/` and `tools/card-src/`; `python3 tools/make_heroes.py` regenerates them. Headers are multiplied into the gradient field so the white falls away; the white line drawing stays on top. Rule for header images: one solid object on a light background, nothing clear-glass or busy. Card images reference the portfolio: a T cell (Heat Biologics), an antibody (Elusys' ANTHIM) and the heart (TyRx, Cardiac Dimensions).
+
 ## Share cards and icons
 Every page has its own 1200x630 share card in `assets/og/` (the homepage film frame and statement, or the page's own header), plus full Open Graph and Twitter tags with absolute URLs. `python3 tools/make_og.py` re-renders the cards, the Apple touch icon and the PNG favicon from the site's own styles (needs Google Chrome); run it after changing a page header.
 

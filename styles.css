@@ -689,6 +689,7 @@ p{text-wrap:pretty}
 .split-pic{aspect-ratio:4/5;width:min(100%,340px,38vh);margin-top:clamp(28px,3vw,44px)}
 .area{position:relative}
 .area .pic{aspect-ratio:4/3}
+.area .pic::before{display:none}
 .area:hover .pic img{transform:scale(1.035)}
 .area-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
 .area-meta .n{color:var(--mid)}
