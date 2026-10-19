@@ -722,7 +722,7 @@ p{text-wrap:pretty}
 .phero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
 .phero.has-img .phero-row{grid-template-columns:minmax(0,1fr);gap:22px;max-width:50%}
 .phero.has-img .phero-lead{max-width:30em}
-.phero.has-img>.art{stroke:rgba(255,255,255,.7)}
+.phero.has-img>.art{stroke:rgba(255,255,255,.42)}
 @media (max-width:1180px) and (min-width:901px){.phero-img{width:50%}.phero.has-img .phero-row{max-width:46%}}
 @media (max-width:900px){
   .phero-img{width:100%;opacity:.7;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 26%,transparent 46%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 26%,transparent 46%)}
