@@ -1,4 +1,4 @@
-/* Seed One, PX3. One script for every page: each block checks for its own elements before it runs. */
+/* Seed-One, PX3. One script for every page: each block checks for its own elements before it runs. */
 (() => {
   const root = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -280,27 +280,42 @@
       inp.addEventListener('blur', () => { if (inp.value) check(inp); });
       inp.addEventListener('input', () => { if (inp.closest('.fld').classList.contains('bad')) check(inp); });
     });
+    const to = form.dataset.to || 'info@seedone.com';
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const bad = fields.filter(f => !check(f));
       if (bad.length) { status.textContent = `Please check the ${bad.length === 1 ? 'highlighted field' : bad.length + ' highlighted fields'}.`; bad[0].focus(); return; }
-      const btn = $('button[type=submit]', form);
-      btn.disabled = true; status.textContent = 'Sending…';
       const data = Object.fromEntries(new FormData(form));
-      const endpoint = form.dataset.endpoint;
-      try {
-        // Wire data-endpoint to the form service (for example Formspree or a Wix Velo function).
-        // Until it is set, the form shows its success state so the flow can be reviewed.
-        if (endpoint) {
-          const r = await fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-          if (!r.ok) throw new Error(r.status);
-        } else await new Promise(r => setTimeout(r, 700));
+      if (data._gotcha) return;                          // the hidden field was filled in, so this is a bot
+      delete data._gotcha;
+      const name = `${data.first.trim()} ${data.last.trim()}`;
+      const subject = `Website enquiry: ${name}, ${data.org.trim()}`;
+      const btn = $('button[type=submit]', form);
+      const finish = mode => {
         form.hidden = true;
-        $('.done-name', done).textContent = data.first ? ', ' + data.first.trim() : '';
+        $('.done-name', done).textContent = ', ' + data.first.trim();
+        $('.done-sent', done).hidden = mode !== 'sent';
+        $('.done-mail', done).hidden = mode !== 'mail';
         done.hidden = false; done.focus();
         requestAnimationFrame(() => done.classList.add('in'));
+      };
+      const endpoint = form.dataset.endpoint;
+      if (!endpoint) {
+        // No form service connected yet: hand the enquiry to the visitor's email app, addressed to Seed-One.
+        const body = [`Name: ${name}`, `Email: ${data.email.trim()}`, `Company or organization: ${data.org.trim()}`, `I am: ${data.role}`, '', (data.message || '').trim()].join('\n');
+        location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        finish('mail');
+        return;
+      }
+      // A form service (Formspree, FormSubmit or similar) forwards the enquiry to the inbox it is set up for.
+      btn.disabled = true; status.textContent = 'Sending…';
+      try {
+        const r = await fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, name, _subject: subject, _replyto: data.email.trim() }) });
+        if (!r.ok) throw new Error(r.status);
+        finish('sent');
       } catch (err) {
-        status.textContent = 'Something went wrong sending your message. Please try again.';
+        status.innerHTML = `Something went wrong sending your message. Please try again, or email <a href="mailto:${to}">${to}</a>.`;
         btn.disabled = false;
       }
     });

@@ -1,4 +1,4 @@
-/* Seed One homepage, PX3 Lens direction.
+/* Seed-One homepage, PX3 Lens direction.
    Tokens follow the confirmed VI palette. No lime or yellow (client instruction, 20 Sep 2026). */
 /* Geist Mono (SIL OFL 1.1, self-hosted from the supplied file) */
 @font-face{font-family:"Geist Mono";src:url("assets/fonts/GeistMono-Variable.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
@@ -728,6 +728,13 @@ p{text-wrap:pretty}
   .phero-img{width:100%;opacity:.7;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 26%,transparent 46%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 26%,transparent 46%)}
   .phero.has-img .phero-row{max-width:none}
 }
+
+/* The name never splits at its hyphen */
+.nw{white-space:nowrap}
+/* Enquiry form: hidden field that only bots fill in, and the address on the contact page */
+.enq .hp{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;opacity:0;pointer-events:none}
+.contact-mail{font-size:clamp(18px,1.5vw,22px);letter-spacing:-.015em}
+.contact-mail .ul{font-size:inherit}
 
 /* Gradient motion is reserved for the impact grid: it drifts only while on screen. Every other field is static. */
 .bento .tile.grad{animation:gdrift var(--dur,26s) ease-in-out infinite alternate;animation-delay:var(--dl,0s);animation-play-state:paused}
